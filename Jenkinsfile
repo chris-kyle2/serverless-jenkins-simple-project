@@ -15,11 +15,12 @@ pipeline {
         stage('Setup') {
             steps {
                 sh '''
-                     python3 -m venv venv
+                    python3 -m venv venv
                     . venv/bin/activate
                     pip install --upgrade pip
+                    cd lambda-app/tests
                     pip install -r requirements.txt
-        '''
+                   '''
             }
         }
         stage('Test') {
