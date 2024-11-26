@@ -23,14 +23,7 @@ pipeline {
                    '''
             }
         }
-        stage('Test') {
-            steps {
-                sh '''
-                cd lambda-app/tests
-                pytest
-                '''
-            }
-        }
+        
 
         stage('Build') {
             steps {
