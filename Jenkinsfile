@@ -25,7 +25,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "pytest"
+                sh '''
+                cd lambda-app/tests
+                pytest
+                '''
             }
         }
 
