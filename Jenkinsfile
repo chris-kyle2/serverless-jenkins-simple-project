@@ -1,8 +1,17 @@
 pipeline {
     agent any
+    options { skipDefaultCheckout() }
 
     
     stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/chris-kyle2/serverless-jenkins-simple-project.git', branch: 'main'
+                sh "echo 'Successfully checked out repository' "
+                sh "ls -ltr"
+            }
+        }
+
 
         stage('Setup') {
             steps {
